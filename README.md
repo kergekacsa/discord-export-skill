@@ -76,6 +76,16 @@ Ask Claude Code in natural language, for example:
 
 A **start date is required**; the end date is optional and defaults to now.
 
+### Example: summarize a channel and surface what matters
+
+> Summarize the #skills channel from the Matt's AI Heroes server over the last two months.
+> Surface the most valuable information and skills discussed, and prioritize by community
+> signal — treat messages with more reactions and active thread replies as higher-value.
+
+This runs the export, then works over the resulting JSON: reactions and thread activity act as
+relevance signals, so the recap leads with what the community engaged with most rather than a
+flat chronological dump.
+
 ## Output
 
 - JSON, written to `%TEMP%\discord-export\<timestamp>\` unless you specify a location.
