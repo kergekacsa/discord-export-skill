@@ -5,6 +5,20 @@ A Claude Code skill that exports Discord chat history to lossless JSON, using Ty
 on your own Windows machine, validates a token you supply, resolves which server a channel
 belongs to, and writes JSON — including every thread and all reactions.
 
+## Purpose
+
+The point of the export is to turn a channel into something you can **feed to an LLM for
+summarizing and catching up**, instead of scrolling by hand. It's built for cases like:
+
+- **Summarizing a channel** — condense a busy channel into the key points and decisions.
+- **Long discussions** — threads or debates too long to read end to end.
+- **Unfocused chatter** — channels that wander, where you want the signal without the noise.
+- **Catching up after time away** — you've been off for a while and need a recap of what happened.
+- **Following along** — a running channel you can't watch live but want digested periodically.
+
+The lossless JSON (every message, thread, and reaction) is the input; the summary or recap is
+what you do with it afterward.
+
 ## What it does
 
 - Exports one or more Discord channels to JSON.
@@ -74,7 +88,8 @@ A **start date is required**; the end date is optional and defaults to now.
 
 ```
 discord-export/
-  SKILL.md                          Skill definition and the phase-by-phase flow  references/
+  SKILL.md                          Skill definition and the phase-by-phase flow  
+  references/
     token-acquisition.md            Why the skill does not auto-harvest tokens, plus manual steps
   scripts/
     _common.ps1                     Locate the exe; read the token without echoing it
